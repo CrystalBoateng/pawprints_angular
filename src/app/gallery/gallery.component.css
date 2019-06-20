@@ -1,0 +1,23 @@
+.one-photo-group-wrapper {
+  display: block;
+  float: left;
+  margin: 0 3rem 3rem 0;
+  width: 300px;
+}
+.one-photo-group-wrapper img {
+  height: 200px;
+  width: 300px;
+}
+.photo-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  height: 1.2rem;
+  margin: 0.5rem 0 0 0;
+  overflow: hidden;
+}
+.photo-description {
+  height: 1rem;
+  margin: .5rem 0;
+  overflow: hidden;
+}
+

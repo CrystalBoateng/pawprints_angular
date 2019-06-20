@@ -1,0 +1,58 @@
+<div id="main-wrapper">
+
+  <!-- if photo object found -->
+  <div *ngIf="photo; else noPhoto">
+    <img src="{{photodisplayurl}}" class="detail-main-image" alt={{photo.title}} />
+
+    <div *ngIf="!editing">
+      <h1>{{photo.title}}</h1>
+      <h2>Album: {{photo.album}}</h2>
+      <p><strong>Description:</strong> {{photo.description}}</p>
+      <p><strong>Tags:</strong> {{photo.tags}}</p>
+    </div>
+    <div *ngIf="editing">
+      <form id="update-form" #formContent="ngForm" (ngSubmit)="updatePhoto(formContent.value)">
+        <span class="field">
+          <label for="titleField">Title: </label>
+          <input id="titleField" name="titleField" [ngModel]="photo.title">
+        </span>
+
+        <span class="field">
+          <label for="albumField">Album: </label>
+          <input id="albumField" name="albumField" [ngModel]="photo.album">
+        </span>
+
+        <span class="field">
+          <label for="descriptionField">Description: </label>
+          <input id="descriptionField" name="descriptionField" [ngModel]="photo.description">
+        </span>
+
+        <span class="field">
+          <label for="tagsField">Tags: </label>
+          <input id="tagsField" name="tagsField" [ngModel]="photo.tags">
+        </span>
+
+        <button type="submit">Save</button>
+        <button type="button" (click)="setEditMode(false)">Cancel</button>
+      </form>
+    </div>
+    <div *ngIf="!editing">
+      <button (click)="setEditMode(true)">Edit</button>
+    </div>
+
+    <button type="button" (click)="deletePhoto()">Delete</button>
+    <hr class="transparent-hr" />
+    <div id="unalterable-metadata-wrapper">
+      <h2>Unalterable Metadata</h2>
+      <p><strong>_id:</strong> {{photo._id}}</p>
+      <p><strong>imageurl:</strong> {{photo.imageurl}}</p>
+      <p><strong>filename:</strong> {{photo.filename}}</p>
+      <p><strong>originalname:</strong> {{photo.originalname}}</p>
+      <p><strong>mimetype:</strong> {{photo.mimetype}}</p>
+    </div>
+
+  </div>
+  <!-- else if no photo object found -->
+  <ng-template #noPhoto>
+    <app-pagenotfound></app-pagenotfound>
+  </ng-template>

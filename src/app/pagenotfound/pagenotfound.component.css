@@ -1,0 +1,13 @@
+img {
+  width: 50%;
+  float: left;
+}
+h1 {
+  color: silver;
+  font-size: 4em;
+  margin-top: .67em;
+}
+p {
+  color: silver;
+  font-size: 2em;
+}

@@ -1,0 +1,11 @@
+<h1>Gallery</h1>
+
+<div class="one-photo-group-wrapper" *ngFor='let singlePhoto of photoList | keyvalue'>
+  <a routerLink="/detail/{{singlePhoto.value._id}}">
+    <img src='{{photoUrl}}{{singlePhoto.value.imageurl}}' alt={{singlePhoto.value.title}}/>
+  </a>
+  <p class="photo-title">{{singlePhoto.value.title}}</p>
+  <p class="photo-description">{{singlePhoto.value.description}}</p>
+</div>
+<hr />
+<app-newphoto (newPhoto)="updatePhotoList()"></app-newphoto>

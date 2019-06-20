@@ -1,0 +1,39 @@
+<h2>Add a Photo</h2>
+
+<form #newphotoform="ngForm" (ngSubmit)="save(newphotoform)">
+
+  <div class="upload-field">
+    <label>File (required):
+      <input required type="file" name="file" (change)="handleFileInput($event.target.files)">
+    </label>
+  </div>
+
+  <div class="upload-field">
+    <label>Title (required):
+      <input required minlength="1" #title="ngModel" placeholder="Title" name="title" [(ngModel)]="photo.title">
+    </label>
+    <span *ngIf="title.invalid && title.touched" class="alert">*This field is required.</span>
+  </div>
+
+  <div class="upload-field">
+    <label>Album:
+      <input placeholder="Album" name="album" [(ngModel)]="photo.album">
+    </label>
+  </div>
+
+  <div class="upload-field">
+    <label>Description:
+      <input placeholder="Description" name="description" [(ngModel)]="photo.description">
+    </label>
+  </div>
+
+  <div class="upload-field">
+    <label>Tags:
+      <input placeholder="Comma-separated values" name="tags" [(ngModel)]="photo.tags">
+    </label>
+  </div>
+
+
+  <button type="submit" [disabled]="!newphotoform.valid">Upload</button>
+
+</form>

@@ -1,0 +1,13 @@
+#upload-wrapper {
+  background-color: gray;
+  border-radius: 45px;
+  border: white dotted 6px;
+  margin: 3rem 0;
+  width: 100%;
+}
+#upload-wrapper .centered {
+  text-align: center;
+}
+.upload-field{
+  margin: 1rem 3rem;
+}

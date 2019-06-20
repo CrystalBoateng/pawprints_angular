@@ -1,0 +1,24 @@
+.detail-main-image {
+  width: 100%;
+}
+#update-botton, #delete-button {
+  margin: 1rem;
+}
+#update-form .field {
+  font-weight: 700;
+  display: block;
+  margin: .67em 0;
+}
+.transparent-hr {
+  border-color: transparent !important;
+}
+#unalterable-metadata-wrapper {
+  border: solid 2px gray;
+  -webkit-bordr-radius: 45px;
+  -moz-border-radius: 45px;
+  border-radius: 45px;
+  color: gray;
+  clear: both;
+  margin-top: 3rem;
+  padding: 2rem;
+}
