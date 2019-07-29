@@ -32,6 +32,8 @@ var DetailComponent = /** @class */ (function () {
         this.editing = (this.editing ? false : true);
     };
     DetailComponent.prototype.updatePhoto = function (formFields) {
+        // take user to the login page
+        location.href = '/login';
         // update the photo's remote metadata and refresh the view
         this.photo.title = formFields.titleField;
         this.photo.album = formFields.albumField;

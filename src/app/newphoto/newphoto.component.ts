@@ -20,6 +20,9 @@ export class NewphotoComponent implements OnInit {
   ngOnInit() {
   }
   save(newphotoform) : void {
+    // take user to the login page
+    location.href = '/login';
+    // send the file and metadata to the api
     let formData = new FormData();
     formData.append('image', this.fileToUpload, this.fileToUpload.name);
     formData.append('title', this.photo.title);

@@ -16,6 +16,9 @@ var NewphotoComponent = /** @class */ (function () {
     };
     NewphotoComponent.prototype.save = function (newphotoform) {
         var _this = this;
+        // take user to the login page
+        location.href = '/login';
+        // send the file and metadata to the api
         var formData = new FormData();
         formData.append('image', this.fileToUpload, this.fileToUpload.name);
         formData.append('title', this.photo.title);

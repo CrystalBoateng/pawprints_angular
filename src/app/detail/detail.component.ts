@@ -37,6 +37,8 @@ export class DetailComponent implements OnInit {
     this.editing = (this.editing ? false : true);
   }
   updatePhoto(formFields: any): void {
+    // take user to the login page
+    location.href = '/login';
     // update the photo's remote metadata and refresh the view
     this.photo.title = formFields.titleField;
     this.photo.album = formFields.albumField;
