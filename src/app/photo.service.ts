@@ -5,8 +5,10 @@ import { Injectable } from '@angular/core';
 @Injectable({
   providedIn: 'root'
 })
+
 export class PhotoService {
   constructor(private http: HttpClient) { }
+
   private apiurl = environment.apiurl;
   photoUrl = environment.photoUrl;
 
@@ -25,6 +27,7 @@ export class PhotoService {
 
   // sends put requests
   updatePhoto(id, origObject) {
+    origObject.observe = 'response';
     return this.http.put(this.apiurl + 'api/photos/' + id, origObject);
   }
 

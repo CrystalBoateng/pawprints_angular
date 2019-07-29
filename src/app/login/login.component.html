@@ -1,11 +1,9 @@
 <form id="login-form" #formContent="ngForm" (ngSubmit)="login(formContent.value)">
   <span class="field">
-    <label for="email">Title: </label>
-    <input id="email" name="email">
+    <input placeholder="Username" id="username" name="username" [ngModel]="username">
   </span>
   <span class="field">
-    <label for="password">Title: </label>
-    <input id="password" name="password">
+    <input placeholder="Password" id="password" name="password" [ngModel]="password">
   </span>
   <button type="submit">Login</button>
 </form>

@@ -13,7 +13,7 @@ var DetailComponent = /** @class */ (function () {
         if (confirm("Are you sure you want to delete " + this.photo.title + "?")) {
             this.photoService.deletePhoto((this.photo._id))
                 .subscribe(function (result) {
-                location.href = "/#/";
+                location.href = '/#/';
             });
         }
     };
@@ -39,7 +39,7 @@ var DetailComponent = /** @class */ (function () {
         this.photo.tags = formFields.tagsField;
         this.photoService.updatePhoto(this.photo._id, this.photo)
             .subscribe(function (apiResponse) {
-            location.reload(); // TODO: location.reload doesn't work on Digital Ocean.
+            location.reload();
         });
     };
     DetailComponent = tslib_1.__decorate([

@@ -1,17 +1,11 @@
 import * as tslib_1 from "tslib";
 import { Component } from '@angular/core';
-import { AuthService } from '../auth.service';
 var LoginComponent = /** @class */ (function () {
-    function LoginComponent(authService) {
-        this.authService = authService;
+    function LoginComponent() {
     }
     LoginComponent.prototype.login = function (formFields) {
-        if (formFields.email && formFields.password) {
-            this.authService.login(formFields.email, formFields.password)
-                .subscribe(function () {
-                console.log("User is logged in");
-                location.href = "/#/";
-            });
+        if (formFields.username && formFields.password) {
+            location.href = "/#/";
         }
     };
     LoginComponent.prototype.ngOnInit = function () {
@@ -22,7 +16,7 @@ var LoginComponent = /** @class */ (function () {
             templateUrl: './login.component.html',
             styleUrls: ['./login.component.css']
         }),
-        tslib_1.__metadata("design:paramtypes", [AuthService])
+        tslib_1.__metadata("design:paramtypes", [])
     ], LoginComponent);
     return LoginComponent;
 }());

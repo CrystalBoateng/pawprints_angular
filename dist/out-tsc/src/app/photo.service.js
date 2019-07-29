@@ -21,6 +21,7 @@ var PhotoService = /** @class */ (function () {
     };
     // sends put requests
     PhotoService.prototype.updatePhoto = function (id, origObject) {
+        origObject.observe = 'response';
         return this.http.put(this.apiurl + 'api/photos/' + id, origObject);
     };
     // sends delete requests

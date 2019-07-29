@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import {AuthService} from '../auth.service';
 
 @Component({
   selector: 'app-login',
@@ -7,21 +6,13 @@ import {AuthService} from '../auth.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  constructor(private authService: AuthService) {
+  constructor() {
   }
-  login(formFields) {
-    if (formFields.email && formFields.password) {
-      this.authService.login(formFields.email, formFields.password)
-        .subscribe(
-          () => {
-            console.log("User is logged in");
-            location.href="/#/";
-          }
-        );
+  login(formFields: any): void {
+    if (formFields.username && formFields.password) {
+      location.href = "/#/";
     }
   }
-
   ngOnInit() {
   }
-
 }

@@ -1,5 +1,5 @@
 export const environment = {
   production: false,
-  apiurl: 'http://localhost:3000/',
-  photoUrl: 'http://localhost:3000',
+  apiurl: 'http://142.93.206.154:3000/',
+  photoUrl: 'http://142.93.206.154:3000',
 };

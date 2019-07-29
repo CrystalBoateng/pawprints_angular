@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import {PhotoService} from '../photo.service';
+import { PhotoService } from '../photo.service';
 
 @Component({
   selector: 'app-detail',
@@ -15,11 +15,11 @@ export class DetailComponent implements OnInit {
   constructor(private route: ActivatedRoute,
               private photoService: PhotoService) { }
 
-  deletePhoto(){
-    if(confirm(`Are you sure you want to delete ${this.photo.title}?`)) {
+  deletePhoto() {
+    if (confirm(`Are you sure you want to delete ${this.photo.title}?`)) {
       this.photoService.deletePhoto((this.photo._id))
         .subscribe((result) => {
-          location.href="/#/";
+          location.href = '/#/';
         });
     }
   }
@@ -44,8 +44,9 @@ export class DetailComponent implements OnInit {
     this.photo.tags = formFields.tagsField;
     this.photoService.updatePhoto(this.photo._id, this.photo)
       .subscribe((apiResponse) => {
-        location.reload(); // TODO: location.reload doesn't work on Digital Ocean.
+        location.reload();
       });
   }
+
 
 }
